@@ -57,3 +57,38 @@ movieDB.movies.forEach((film,i) => {
 </li>
     `
 });
+
+
+// Use Listner
+const btns = document.querySelectorAll('button'),
+    //  btn1 = document.querySelector('button'),
+      overlay = document.querySelector('.overlay');
+
+
+/* btn.addEventListener('click', () => {
+    alert('BOM');
+}); */
+
+let i = 0;
+const deleteElement = (e) => {
+    console.log(e.target);
+    console.log(e.type);
+   /*  i++;
+    if (i==1){
+        btn1.removeEventListener('click', deleteElement);
+    } */
+};
+
+/* btn.addEventListener('click', deleteElement);
+overlay.addEventListener('click', deleteElement); */
+
+btns.forEach(btn => {
+    btn.addEventListener('click', deleteElement, {once:true});
+});
+
+const link = document.querySelector('a');
+
+link.addEventListener('click', (e) => { // не переходим на страницу
+        e.preventDefault();
+        console.log(e.target);
+});
